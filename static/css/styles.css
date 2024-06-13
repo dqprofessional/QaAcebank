@@ -1,0 +1,210 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.highlighted-text {
+    background-color: #dce2de;
+    color: #155724;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* OLD: .container {
+    width: 300px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: auto;
+} */
+
+.container {
+    width: 1100px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: auto;
+}
+
+
+/*----------------------------*/
+.dashboard-container, .create-account-container, .register-container, .login-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-dashboard-container,.customer-transactions-container, .customer-dashboard-container {
+    width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+/*-----------------------------*/
+
+
+.welcome-container img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    text-align: center;
+    /*display: block;*/
+    /*width: 100%;*/
+    width: 200px; 
+    padding: 10px;
+    margin: 10px 0;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-center{
+    text-align: center;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    width: auto;  
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;      
+}
+
+
+.btn:hover {
+    background: #0056b3;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px;
+    box-sizing: border-box;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.small-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    width: auto;
+}
+
+.small-btn-red {
+    background: red;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    width: auto;
+}
+
+
+.small-btn-green {
+    background: green;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    width: auto;
+}
+
+
+/* Flash message styling */
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.flash-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.flash-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.flash-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}

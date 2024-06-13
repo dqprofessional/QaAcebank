@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="customer-dashboard-container">
+    <h2>Customer Dashboard</h2>
+    {% if accounts %}
+        <p>Account Number: {{ accounts[0].account_number }}</p>
+        <p>Name: {{ customer.full_name }}</p>
+        <p>Address: {{ customer.address }}</p>
+        <p>Email: {{ customer.email }}</p>
+        <p>Account Type: {{ accounts[0].account_type.type_name }}</p>
+        <p>Balance: {{ accounts[0].balance }}</p>
+
+        <nav>
+            <a href="#" class="btn small-btn">Deposit</a>
+            <a href="#" class="btn small-btn">Withdraw</a>
+        </nav>        
+    {% else %}
+        <p class="highlighted-text">No accounts available. <br/>Contact the bank to create an account for you!</p>
+    {% endif %}
+    <nav>
+        <a href="{{ url_for('logout') }}" class="btn small-btn">Logout</a>
+    </nav>
+
+    <h3>Transaction History</h3>
+    {% if transactions %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.transaction_date }}</td>
+                    <td>{{ transaction.transaction_type }}</td>
+                    <td>{{ transaction.amount }}</td>
+                    <td>{{ transaction.balance }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No transactions available.</p>
+    {% endif %}
+</div>
+{% endblock %}

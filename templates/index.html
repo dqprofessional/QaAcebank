@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="welcome-container">
+    <img src="{{ url_for('static', filename='images/bank.png') }}" alt="Bank Image">
+    <h2>Welcome to Ace Banks Plc</h2>
+    <p class="highlighted-text">New customers must first register before an 'admin' can open an account for them<br />Existing customers can login immediately</p>
+    <p>Please login or register to proceed</p>    
+    <a href="{{ url_for('login') }}" class="btn">Login</a>
+    <a href="{{ url_for('register') }}" class="btn">Register</a>
+    
+    <!-- {% if session.get('is_admin') %}
+    <a href="{{ url_for('create_account') }}" class="btn">Create Account</a>
+    {% endif %} -->
+</div>
+{% endblock %}

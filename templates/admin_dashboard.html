@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="admin-dashboard-container">
+    <h2>Admin Dashboard</h2>
+    <nav>
+        <a href="{{ url_for('logout') }}" class="btn-center">Logout</a>
+    </nav>
+    <h3>Customers</h3>
+    <table class="customers-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+                    <tr>
+                        <td>{{ customer.full_name }}</td>
+                        <td>{{ customer.email }}</td>
+                        <td class="action-buttons">
+                            {% set has_account = false %}
+                            {% if not has_account %}
+                                <a href="{{ url_for('create_account', email=customer.email) }}" class="btn small-btn-green">Open Account</a>
+                            {% endif %}                            
+                            {% for account in customer.accounts %}
+                                {% if account.is_suspended == 0 and account.is_closed == 0 %}
+                                    {% set has_account = true %}
+                                    <a href="{{ url_for('view_account', customer_id=customer.id) }}" class="btn small-btn-green">View Account</a>
+                                    <a href="{{ url_for('suspend_account', customer_id=customer.id) }}" class="btn small-btn-red">Suspend Account</a>
+                                    <a href="{{ url_for('close_account', customer_id=customer.id) }}" class="btn small-btn-red">Close Account</a>
+                                    <a href="{{ url_for('suspend_customer', customer_id=customer.id) }}" class="btn small-btn-red">Suspend Customer</a>
+                                {% endif %}
+                            {% endfor %}
+                            <!-- {% if not has_account %}
+                                <a href="{{ url_for('create_account', email=customer.email) }}" class="btn small-btn">Open Account</a>
+                            {% endif %} -->
+                        </td>
+                    </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
